@@ -1,0 +1,524 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+  color: #0384d8;
+}
+
+.head {
+  border-bottom: 1px solid black;
+}
+
+.head .head-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  color: #4c4c4c;
+  font-size: 14px;
+  /* Приближение из-за подстановки шрифтов */
+}
+
+header {
+  margin-top: 20px;
+  display: -webkit-box;
+  display: flex;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  justify-content: center;
+}
+
+header .logowrap {
+  cursor: pointer;
+  flex-basis: calc(33% - 15px);
+  margin-right: 15px;
+}
+
+header .logowrap .logo {
+  background-image: url(../img/logo.png);
+  background-size: cover;
+  width: 207px;
+  height: 52px;
+}
+
+header .worktime {
+  flex-basis: calc(25% - 30px);
+  padding-left: 15px;
+  padding-right: 15px;
+  position: relative;
+}
+
+header .worktime p:before {
+  content: url(../img/clock.png);
+  position: absolute;
+  left: -10px;
+  top: 20px;
+}
+
+header .address {
+  flex-basis: calc(25% - 30px);
+  padding-left: 15px;
+  padding-right: 15px;
+  position: relative;
+}
+
+header .address p:before {
+  content: url(../img/geo.png);
+  position: absolute;
+  left: -10px;
+  top: 20px;
+}
+
+header .phonenumbers {
+  flex-basis: calc(16% - 30px);
+  padding-left: 15px;
+  padding-right: 15px;
+  position: relative;
+}
+
+header .phonenumbers p:before {
+  content: url(../img/phone.png);
+  position: absolute;
+  left: -10px;
+  top: 20px;
+}
+
+.navbar {
+  max-width: 1200px;
+  margin: 0 auto;
+  color: #4a4a4a;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 24px;
+  position: relative;
+}
+
+.navbar nav {
+  float: left;
+}
+
+.navbar nav ul li {
+  display: inline-block;
+  padding-right: 10px;
+  position: relative;
+}
+
+.navbar nav ul li a {
+  text-decoration: none;
+  color: #4a4a4a;
+  padding-bottom: 10px;
+}
+
+.navbar nav ul li a:hover {
+  color: #0384d8;
+  border-bottom: 3px solid #0384d8;
+}
+
+.navbar nav ul li:hover ul {
+  width: 300px;
+  border: 1px solid black;
+  border-radius: 5px;
+  z-index: 999;
+}
+
+.navbar nav ul li ul {
+  background-color: white;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  left: 0;
+  top: 20px;
+  width: 0;
+  overflow: hidden;
+}
+
+.navbar nav ul li ul li {
+  display: block;
+  margin: 5px 0;
+  font-weight: 500;
+}
+
+.navbar nav ul li ul li:hover {
+  background-color: #0384d8;
+}
+
+.navbar nav ul li ul li:hover a {
+  color: #ffffff;
+}
+
+.navbar nav ul li ul li a {
+  padding: 0 10px;
+}
+
+.navbar #trag:nth-child(2)::after {
+  position: absolute;
+  right: 0;
+  top: 10px;
+  content: "";
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 4px 3px 0 3px;
+  border-color: #4a4a4a transparent transparent transparent;
+}
+
+.navbar #trag:nth-child(2):hover::after {
+  border-color: #0384d8 transparent transparent transparent;
+}
+
+.navbar button {
+  position: absolute;
+  right: 40px;
+  top: 10px;
+  background-color: #ffffff;
+  padding: 5px 20px;
+  border-radius: 20px;
+  border-color: #0384d8;
+  color: #0384d8;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  -webkit-transition: box-shadow 0.5s;
+  transition: box-shadow 0.5s;
+}
+
+.navbar button:hover {
+  background-color: #0384d8;
+  color: #ffffff;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+.navbar button:focus {
+  outline: none;
+}
+
+.navbar:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+.carousel {
+  position: relative;
+  background-color: #e6f0fa;
+}
+
+.carousel .carousel-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Dots start */
+
+.dots {
+  position: absolute;
+  bottom: 50px;
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0 0 0 25px;
+  list-style: none;
+  text-align: left;
+}
+
+.dots li {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin: 0 5px;
+  padding: 0;
+  cursor: pointer;
+}
+
+.dots li button {
+  font-size: 0;
+  line-height: 0;
+  display: block;
+  width: 20px;
+  height: 20px;
+  padding: 5px;
+  cursor: pointer;
+  color: transparent;
+  border: 0;
+  outline: none;
+  background: transparent;
+}
+
+.dots li button:hover,
+.dots li button:focus {
+  outline: none;
+}
+
+.dots li button:hover:before,
+.dots li button:focus:before {
+  opacity: 1;
+}
+
+.dots li button:before {
+  font-family: 'slick';
+  font-size: 6px;
+  line-height: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  content: '';
+  text-align: center;
+  opacity: .50;
+  border: 1px solid #0384d8;
+  border-radius: 10px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.dots li.slick-active button:before {
+  opacity: 1;
+  background-color: #0384d8;
+}
+
+/* Dots end */
+
+.hide {
+  opacity: 0;
+  display: none;
+}
+
+.show {
+  opacity: 1;
+  display: block;
+}
+
+.advantages {
+  position: absolute;
+  left: 0;
+  right: 0;
+  max-width: 1200px;
+  margin: -20px auto 0;
+  z-index: 1001;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  color: #ffffff;
+  font-weight: 700;
+  display: -webkit-box;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  background-color: #0384d8;
+}
+
+.advantages .advant {
+  padding: 40px 0;
+  flex-basis: calc(25% - 20px);
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+.advantages .advant .pic {
+  margin: 0 10px;
+}
+
+.aboutCompany {
+  max-width: 1200px;
+  margin: 150px auto 0;
+  padding-bottom: 30px;
+  border-bottom: 1px solid black;
+}
+
+.aboutCompany .aboutComp {
+  margin: 0 10px;
+  float: left;
+  max-width: calc(50% - 20px);
+}
+
+.aboutCompany .aboutComp p {
+  font-size: 16px;
+}
+
+.services {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.services h1 {
+  margin-left: 10px;
+}
+
+.services #aboutService {
+  margin: 0 10px;
+  max-width: 55%;
+}
+
+.services .serviceList {
+  display: -webkit-box;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.services .serviceList .item {
+  flex-basis: calc(100% / 3 - 40px);
+  margin: 10px 20px;
+}
+
+.services .serviceList .item img {
+  float: left;
+  margin-right: 10px;
+}
+
+.services button {
+  background-color: #ffffff;
+  padding: 5px 20px;
+  border-radius: 20px;
+  border-color: #0384d8;
+  color: #0384d8;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  -webkit-transition: box-shadow 0.5s;
+  transition: box-shadow 0.5s;
+}
+
+.services button:hover {
+  background-color: #0384d8;
+  color: #ffffff;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+.services button:focus {
+  outline: none;
+}
+
+@media screen and (max-width: 992px) {
+  .head-wrapper {
+    max-width: 960px;
+  }
+
+  header .logowrap {
+    flex-basis: calc(25% - 15px);
+  }
+
+  header .logowrap .logo {
+    width: 165px;
+    height: 40px;
+  }
+
+  header .phonenumbers {
+    flex-basis: calc(25% - 30px);
+  }
+
+  .navbar {
+    max-width: 960px;
+    font-size: 12px;
+  }
+
+  .navbar button {
+    font-size: 12px;
+    right: 10px;
+    padding: 5px 5px;
+  }
+
+  .carousel-wrapper {
+    max-width: 960px;
+  }
+
+  .carousel-wrapper .item img {
+    width: 960px;
+  }
+
+  .aboutCompany {
+    max-width: 960px;
+  }
+
+  .aboutCompany .aboutComp {
+    max-width: calc(100% - 20px);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .head-wrapper {
+    max-width: 720px;
+  }
+
+  header .logowrap {
+    flex-basis: calc(80% - 15px);
+  }
+
+  header .logowrap .logo {
+    width: 165px;
+    height: 40px;
+  }
+
+  header .worktime {
+    flex-basis: calc(80% - 30px);
+  }
+
+  header .address {
+    flex-basis: calc(80% - 30px);
+  }
+
+  header .phonenumbers {
+    flex-basis: calc(80% - 30px);
+  }
+
+  #burger {
+    content: url(../img/burger.png);
+    cursor: pointer;
+  }
+
+  .navbar {
+    max-width: 720px;
+  }
+
+  .navbar nav {
+    clear: both;
+    float: left;
+  }
+
+  .navbar nav ul li {
+    display: block;
+  }
+
+  .navbar nav ul li:hover ul {
+    width: 250px;
+  }
+
+  .navbar nav ul li ul {
+    left: 80px;
+    z-index: 999;
+  }
+
+  .navbar button {
+    left: 40px;
+    top: 210px;
+  }
+
+  .carousel {
+    margin-top: 40px;
+  }
+
+  .carousel .carousel-wrapper {
+    max-width: 720px;
+  }
+
+  .carousel .carousel-wrapper .item img {
+    width: 720px;
+  }
+
+  .advantages .advant {
+    flex-basis: calc(50% - 20px);
+    padding: 10px 0;
+  }
+
+  .aboutCompany {
+    max-width: 720px;
+  }
+
+  .aboutCompany .photoComp {
+    margin-left: 10px;
+    width: 70%;
+  }
+}
