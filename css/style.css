@@ -342,14 +342,15 @@ header .phonenumbers p:before {
 .services {
   max-width: 1200px;
   margin: 0 auto;
+  border-bottom: 1px solid black;
 }
 
 .services h1 {
-  margin-left: 10px;
+  padding-left: 10px;
 }
 
 .services #aboutService {
-  margin: 0 10px;
+  padding-left: 10px;
   max-width: 55%;
 }
 
@@ -366,10 +367,12 @@ header .phonenumbers p:before {
 
 .services .serviceList .item img {
   float: left;
-  margin-right: 10px;
+  margin: 0 10px 50px 0;
 }
 
 .services button {
+  display: block;
+  margin: 10px auto 50px;
   background-color: #ffffff;
   padding: 5px 20px;
   border-radius: 20px;
@@ -390,6 +393,89 @@ header .phonenumbers p:before {
 
 .services button:focus {
   outline: none;
+}
+
+.doctors {
+  max-width: 1200px;
+  margin: 0 auto;
+  border-bottom: 1px solid black;
+  padding-bottom: 40px;
+}
+
+.doctors h1 {
+  padding-left: 10px;
+}
+
+.doctors #aboutDoctors {
+  padding-left: 10px;
+  max-width: 55%;
+}
+
+.doctors .carouselDoctors .doctor {
+  text-align: center;
+}
+
+.doctors .carouselDoctors .doctor img {
+  margin: 0 auto;
+}
+
+.doctors .carouselDoctors .doctor .fio {
+  font-size: 18px;
+}
+
+.doctors button {
+  margin: 0 auto;
+  display: block;
+  background-color: #ffffff;
+  padding: 5px 20px;
+  border-radius: 20px;
+  border-color: #0384d8;
+  color: #0384d8;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  -webkit-transition: box-shadow 0.5s;
+  transition: box-shadow 0.5s;
+}
+
+.doctors button:hover {
+  background-color: #0384d8;
+  color: #ffffff;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+.doctors button:focus {
+  outline: none;
+}
+
+.prev::after {
+  content: url(../img/prev.png);
+  position: absolute;
+  bottom: -40px;
+  left: 30%;
+  cursor: pointer;
+  opacity: .50;
+  -webkit-transition: opacity .5s;
+  transition: opacity .5s;
+}
+
+.prev:hover::after {
+  opacity: 1;
+}
+
+.next::after {
+  content: url(../img/next.png);
+  position: absolute;
+  bottom: -40px;
+  right: 30%;
+  cursor: pointer;
+  opacity: .50;
+  -webkit-transition: opacity .5s;
+  transition: opacity .5s;
+}
+
+.next:hover::after {
+  opacity: 1;
 }
 
 @media screen and (max-width: 992px) {
@@ -435,6 +521,14 @@ header .phonenumbers p:before {
 
   .aboutCompany .aboutComp {
     max-width: calc(100% - 20px);
+  }
+
+  .services .serviceList .item {
+    flex-basis: calc(100% / 2 - 40px);
+  }
+
+  .services .serviceList .item img {
+    margin-bottom: 110px;
   }
 }
 
