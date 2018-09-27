@@ -367,7 +367,7 @@ header .phonenumbers p:before {
 
 .services .serviceList .item img {
   float: left;
-  margin: 0 10px 50px 0;
+  margin: 0 10px 80px 0;
 }
 
 .services button {
@@ -398,8 +398,6 @@ header .phonenumbers p:before {
 .doctors {
   max-width: 1200px;
   margin: 0 auto;
-  border-bottom: 1px solid black;
-  padding-bottom: 40px;
 }
 
 .doctors h1 {
@@ -424,7 +422,7 @@ header .phonenumbers p:before {
 }
 
 .doctors button {
-  margin: 0 auto;
+  margin: 20px auto 0;
   display: block;
   background-color: #ffffff;
   padding: 5px 20px;
@@ -451,7 +449,7 @@ header .phonenumbers p:before {
 .prev::after {
   content: url(../img/prev.png);
   position: absolute;
-  bottom: -40px;
+  bottom: -60px;
   left: 30%;
   cursor: pointer;
   opacity: .50;
@@ -466,7 +464,7 @@ header .phonenumbers p:before {
 .next::after {
   content: url(../img/next.png);
   position: absolute;
-  bottom: -40px;
+  bottom: -60px;
   right: 30%;
   cursor: pointer;
   opacity: .50;
@@ -476,6 +474,165 @@ header .phonenumbers p:before {
 
 .next:hover::after {
   opacity: 1;
+}
+
+.consultation {
+  position: relative;
+  min-height: 240px;
+  overflow: hidden;
+  margin-top: 50px;
+}
+
+.consultation::before {
+  content: '';
+  background: #0384d8;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  z-index: -2;
+}
+
+.consultation::after {
+  content: '';
+  background: #e6f0fa;
+  position: absolute;
+  width: 40%;
+  height: 100%;
+  top: 0;
+  right: -10%;
+  -webkit-transform: skewX(-20deg);
+  -ms-transform: skewX(-20deg);
+  transform: skewX(-20deg);
+  z-index: -1;
+}
+
+.consultation .consultation-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.consultation .consultation-wrapper h1 {
+  color: #ffffff;
+  padding-top: 70px;
+  padding-left: 10px;
+}
+
+.consultation .consultation-wrapper #aboutConsult {
+  color: #ffffff;
+  padding-left: 10px;
+  max-width: 70%;
+  line-height: 24px;
+}
+
+.consultation .consultation-wrapper button {
+  position: absolute;
+  right: 10%;
+  top: 90px;
+  bottom: 0;
+  background-color: #f55130;
+  max-height: 50px;
+  border-radius: 20px;
+  border-color: #f55130;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  -webkit-transition: box-shadow 0.5s;
+  transition: box-shadow 0.5s;
+}
+
+.consultation .consultation-wrapper button:hover {
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+.consultation .consultation-wrapper button:focus {
+  outline: none;
+}
+
+footer {
+  max-width: 1200px;
+  margin: 10px auto;
+}
+
+footer ul {
+  list-style-type: none;
+}
+
+footer ul li:before {
+  color: #bcc7d3;
+  /* Цвет маркера */
+  content: "\2751";
+  /* Сам маркер */
+  padding-right: 5px;
+  /* Расстояние от маркера до текста */
+}
+
+footer ul li a {
+  font-size: 14px;
+  color: #0384d8;
+}
+
+footer .footer-services p {
+  font-size: 18px;
+}
+
+footer .footer-phonenumbers p {
+  font-size: 18px;
+}
+
+footer .footer-phonenumbers #footer-telephones {
+  position: relative;
+  font-size: 24px;
+}
+
+footer .footer-phonenumbers #footer-telephones b::before {
+  position: absolute;
+  content: url(../img/phone.png);
+  left: -25px;
+}
+
+footer button {
+  background-color: #ffffff;
+  padding: 5px 20px;
+  border-radius: 20px;
+  border-color: #0384d8;
+  color: #0384d8;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  -webkit-transition: box-shadow 0.5s;
+  transition: box-shadow 0.5s;
+}
+
+footer button:hover {
+  background-color: #0384d8;
+  color: #ffffff;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+footer button:focus {
+  outline: none;
+}
+
+footer .footer-address {
+  font-size: 14px;
+}
+
+footer .footer-address::before {
+  content: url(../img/geo.png);
+}
+
+footer .footer-worktime {
+  font-size: 14px;
+}
+
+footer .footer-worktime::before {
+  content: url(../img/clock.png);
+}
+
+footer .footer-copyright {
+  font-size: 14px;
 }
 
 @media screen and (max-width: 992px) {
@@ -529,6 +686,14 @@ header .phonenumbers p:before {
 
   .services .serviceList .item img {
     margin-bottom: 110px;
+  }
+
+  .consultation .consultation-wrapper #aboutConsult {
+    max-width: 50%;
+  }
+
+  .consultation .consultation-wrapper button {
+    right: 5%;
   }
 }
 
