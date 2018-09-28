@@ -553,9 +553,14 @@ header .phonenumbers p:before {
 footer {
   max-width: 1200px;
   margin: 10px auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 50px);
+  grid-gap: 10px 30px;
 }
 
 footer ul {
+  padding-left: 0;
   list-style-type: none;
 }
 
@@ -573,26 +578,45 @@ footer ul li a {
   color: #0384d8;
 }
 
+footer .footer-services {
+  grid-row: 1 / 5;
+  grid-column: 1;
+}
+
 footer .footer-services p {
   font-size: 18px;
 }
 
+footer .footer-inform {
+  grid-row: 1 / 5;
+  grid-column: 2;
+}
+
+footer .footer-phonenumbers {
+  grid-row: 1 / 2;
+  grid-column: 3;
+}
+
 footer .footer-phonenumbers p {
   font-size: 18px;
+  margin-top: 0;
 }
 
 footer .footer-phonenumbers #footer-telephones {
   position: relative;
+  padding-left: 25px;
   font-size: 24px;
 }
 
 footer .footer-phonenumbers #footer-telephones b::before {
   position: absolute;
   content: url(../img/phone.png);
-  left: -25px;
+  left: 0;
 }
 
 footer button {
+  grid-row: 2;
+  grid-column: 4;
   background-color: #ffffff;
   padding: 5px 20px;
   border-radius: 20px;
@@ -616,6 +640,8 @@ footer button:focus {
 }
 
 footer .footer-address {
+  grid-row: 3;
+  grid-column: 3;
   font-size: 14px;
 }
 
@@ -624,6 +650,8 @@ footer .footer-address::before {
 }
 
 footer .footer-worktime {
+  grid-row: 3;
+  grid-column: 4;
   font-size: 14px;
 }
 
@@ -632,6 +660,8 @@ footer .footer-worktime::before {
 }
 
 footer .footer-copyright {
+  grid-row: 5;
+  grid-column: 3 / 5;
   font-size: 14px;
 }
 
