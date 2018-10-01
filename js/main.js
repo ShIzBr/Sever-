@@ -4,12 +4,7 @@ $(document).ready(function(){
     let navbar = $('.navbar');
     let callme = $('.callme');
     let closePopup = document.querySelector(".close-popup");
-    let test = $('.test');
-    
-    test.on('click',function(e){
-        console.log(e);
-    });
-    
+
     $('.carousel-wrapper').slick({
   dots: true,
   prevArrow: false,
@@ -88,9 +83,12 @@ $(document).ready(function(){
         p.open(form.innerHTML);
     });
     
-    callme.on('click', function(){
-        console.log(2);
-    });
+    
+    
+    //    обработчик событий не работает, потому что ваш элемент не существует во время оценки вашего обработчика событий.
+    $(document).on("click", ".close-popup", function(event){
+        p.close();
+        });
     
     
     
