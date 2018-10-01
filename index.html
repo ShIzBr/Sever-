@@ -11,6 +11,21 @@
 	<script type="text/javascript" src="js/main.js"></script>
 	</head>
 <body>
+ <div class="modal"></div>
+ <div class="overlay"></div>
+ <div class="for-callme-popup">
+            <form class="callme-popup">
+              <div class="close-popup"></div>
+               <h2>Оставьте заявку</h2>
+               <p>И вам перезвонят с регистратуры для уточнения деталей посещения клиники</p>
+                <br><input type="text" placeholder="Введите ваше ФИО">
+                <br><input type="text" placeholder="Введите ваш телефон">
+                <br><input type="button" value="Записаться на прием">
+                <p>Отправляя заявку вы соглашаетесь с <a href="#">Политикой конфеденциальности</a></p>
+                
+                <input type="button" class="test" value="Отправить">
+            </form>
+        </div>
   <section class="head">
       <div class="head-wrapper">
        <header>
@@ -51,7 +66,7 @@
           <li><a href="#">Вопросы</a></li>
           <li><a href="#">Контакты</a></li>
       </ul></nav>
-      <button type="button">Запись на прием</button>
+      <button type="button" class="callme">Запись на прием</button>
   </section>
   <section class="carousel">
       <div class="carousel-wrapper">
@@ -181,7 +196,7 @@
   <div class="consultation-wrapper">
       <h1>Хотите записаться на прием в клинику?</h1>
       <p id="aboutConsult">Для записи на прием к специалисту на нужную вам дату и время, вам необходимо позвонить по одному из телефонов: <b>+7(917)5839000 +7(499)7451010</b> или оставить заявку.</p>
-      <button type="button">Записаться на прием</button>
+      <button type="button" class="callme">Записаться на прием</button>
   </div>
   </section>
   <footer>
@@ -219,7 +234,7 @@
           <p><b>Контакты медицинского центра</b></p>
           <p id="footer-telephones"><b>+7(917)583-90-00<br/>+7(499)745-10-10</b></p>
       </div>
-      <button type="button">Запись на прием</button>
+      <button type="button" class="callme">Запись на прием</button>
       <div class="footer-address">
           <b>Наш адрес:</b> 127204, г.Москва, 9-я Северная линия, дом 17<br/><b>Станция метро</b> "Алтуфьево"
       </div>

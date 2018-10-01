@@ -2,7 +2,14 @@ $(document).ready(function(){
         
     let burger = $('#burger');
     let navbar = $('.navbar');
-        
+    let callme = $('.callme');
+    let closePopup = document.querySelector(".close-popup");
+    let test = $('.test');
+    
+    test.on('click',function(e){
+        console.log(e);
+    });
+    
     $('.carousel-wrapper').slick({
   dots: true,
   prevArrow: false,
@@ -71,8 +78,47 @@ $(document).ready(function(){
         
     });
         
-      
+    let p = new Popup({
+        modal: '.modal',
+        overlay: '.overlay'
+    });
+    
+    callme.on('click', function(){
+        let form = document.querySelector('.for-callme-popup');
+        p.open(form.innerHTML);
+    });
+    
+    callme.on('click', function(){
+        console.log(2);
+    });
     
     
-        
+    
+  
 });
+
+// функции(классы) //
+
+function Popup(options){
+    this.modal = document.querySelector(options.modal);
+    this.overlay = document.querySelector(options.overlay);
+    
+    var popup = this;
+    
+    this.open = function(content){
+        popup.modal.innerHTML = content;
+        popup.overlay.classList.add('open');
+        popup.modal.classList.add('open');
+    }
+    
+    this.close = function(){
+        popup.overlay.classList.remove('open');
+        popup.modal.classList.remove('open');
+    }
+    
+    this.overlay.onclick = popup.close;
+}
+
+
+
+
