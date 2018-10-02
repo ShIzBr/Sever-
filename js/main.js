@@ -3,7 +3,6 @@ $(document).ready(function(){
     let burger = $('#burger');
     let navbar = $('.navbar');
     let callme = $('.callme');
-    let closePopup = document.querySelector(".close-popup");
 
     $('.carousel-wrapper').slick({
   dots: true,
@@ -50,9 +49,6 @@ $(document).ready(function(){
         slidesToScroll: 1
       }
     }
-    // You can unslick at a given breakpoint now by adding:
-    // settings: "unslick"
-    // instead of a settings object
   ]
 });
     
@@ -80,17 +76,22 @@ $(document).ready(function(){
     
     callme.on('click', function(){
         let form = document.querySelector('.for-callme-popup');
+        p.modal.style.backgroundColor = '#fff';
         p.open(form.innerHTML);
     });
     
     
     
-    //    обработчик событий не работает, потому что ваш элемент не существует во время оценки вашего обработчика событий.
+    // чтобы дотянуться до элементов popup, идем через document
     $(document).on("click", ".close-popup", function(event){
         p.close();
         });
     
-    
+    $(document).on("click", ".write-consul", function(event){
+        let form = document.querySelector('.success-popup');
+        p.modal.style.backgroundColor = '#0384d8';
+        p.open(form.innerHTML);
+        });
     
   
 });

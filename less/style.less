@@ -13,11 +13,10 @@ h1, h2 {
     left: 0;
     right: 0;
     width: 450px;
-    height: 450px;
     margin: 50px auto;
     background: #fff;
     display: none;
-    z-index: 1102;
+    z-index: 1101;
     box-sizing: border-box;
     padding: 20px;
 }
@@ -37,21 +36,14 @@ h1, h2 {
 .for-callme-popup{
     display: none;
 }
+.success-popup {
+    display: none;
+}
 
 .callme-popup {
 position: relative;    
 text-align: center;
-    .close-popup::after {
-        content: "X";
-        cursor: pointer;
-        color: #dcdcdc;
-        position: absolute;
-        right: 0;
-        top: 0; 
-    }
-    .close-popup:hover:after{
-            color: #0384d8;
-        }
+    
     
     p{
        font-size: 14px; 
@@ -86,7 +78,25 @@ text-align: center;
     }
 }
 
+.close-popup::after {
+        content: "X";
+        cursor: pointer;
+        color: #dcdcdc;
+        position: absolute;
+        right: 10px;
+        top: 10px; 
+    }
+    .close-popup:hover:after{
+            color: #0384d8;
+        }
 
+.success {
+    text-align: center;
+    color: #fff;
+    h2{
+       color: #fff; 
+    }
+}
 .open{
     display: block;
 }
@@ -779,7 +789,7 @@ footer {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(5, 50px);
-    grid-gap: 20px 30px;
+    grid-gap: 10px 30px;
 
     ul{
         padding-left: 0;
@@ -870,35 +880,5 @@ footer {
         grid-row: 5;
         grid-column: ~"3 / 5";
         font-size: 14px;
-    }
-}
-
-@media screen and (max-width: 992px){
-    footer {
-        ul{
-            padding-left: 5px;
-        }
-        .footer-services {
-            p{
-                padding-left: 5px;
-            }
-        }
-        .footer-phonenumbers {
-            #footer-telephones {
-                font-size: 18px;
-            }
-        }
-    }
-}
-
-@media screen and (max-width: 768px){
-    footer{
-        .footer-phonenumbers {
-            grid-row: ~"1 / 2";
-            grid-column: ~"3 / 5";
-            #footer-telephones {
-                font-size: 18px;
-            }
-        }
     }
 }
