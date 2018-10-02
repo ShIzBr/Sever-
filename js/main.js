@@ -108,42 +108,43 @@ $(document).ready(function(){
         p.open(form.innerHTML);
     });
     
-    // чтобы дотянуться до элементов popup, идем через document
+// чтобы дотянуться до элементов popup, идем через document
     $(document).on("click", ".close-popup", function(event){
         p.close();
         });
-    
+
+// проверка заполненных полей на корректность
     $(document).on("click", ".write-consul", function(event){
         let fioPopup = $('#fio-popup');
         let phonePopup = $('#phone-popup');
         let messagePopup = document.querySelector('.message-popup');
         let fioValue = $('#fio-popup').val();
         let phoneValue = $('#phone-popup').val();
-
+        
         fioValue = $.trim(fioValue);
         phoneValue = $.trim(phoneValue);
-        
-        console.log(fioValue);
-        console.log(phoneValue);
-        
         messagePopup.innerHTML = "";
+
+        let reFio = /^[a-zA-Zа-яА-Я'][a-zA-Zа-яА-Я-' ]+[a-zA-Zа-яА-Я']?$/u;
+        let validFio = reFio.test(fioValue);
         
-        if(fioPopup.val() == ''){
+        let rePhoneNumber = /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{5,10}$/;
+        let validPhoneNumber = rePhoneNumber.test(phoneValue);
+        
+        if(!(validFio)){
+            fioPopup.val("");
             messagePopup.innerHTML += "Укажите ФИО! "; 
         }
-        if(phonePopup.val() == ''){
-            messagePopup.innerHTML += "Укажите телефон! ";
-            phonePopup.attr("placeholder", "+7(___)___-__-__");
+        if(!(validPhoneNumber)){
+            messagePopup.innerHTML += "Укажите телефон! "; 
+            phonePopup.val("");
+            phonePopup.attr("placeholder", "8(___)___-__-__");
         }
-        if((fioPopup.val() !== '') && (phonePopup.val() !== '')){
+        if((validFio) && (validPhoneNumber)){
             let form = document.querySelector('.success-popup');
             p.modal.style.backgroundColor = '#0384d8';
             p.open(form.innerHTML);
         }
-        
-
-        
-        
 
         });
 });
