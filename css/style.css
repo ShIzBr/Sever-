@@ -9,6 +9,43 @@ h2 {
   color: #0384d8;
 }
 
+.btn {
+  border-radius: 20px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  -webkit-transition: box-shadow 0.5s;
+  transition: box-shadow 0.5s;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.btn-blue {
+  background-color: #ffffff;
+  border-color: #0384d8;
+  color: #0384d8;
+}
+
+.btn-blue:hover {
+  background-color: #0384d8;
+  color: #ffffff;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+.btn-orange {
+  background-color: #f55130;
+  border-color: #f55130;
+  color: #ffffff;
+}
+
+.btn-orange:hover {
+  background-color: #ff7155;
+  color: #ffffff;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+}
+
 .modal {
   position: fixed;
   left: 0;
@@ -60,26 +97,7 @@ h2 {
 
 .callme-popup input[type=button] {
   margin-top: 10px;
-  background-color: #ffffff;
   padding: 5px 20px;
-  border-radius: 20px;
-  border-color: #0384d8;
-  color: #0384d8;
-  font-size: 15px;
-  font-weight: 700;
-  cursor: pointer;
-  -webkit-transition: box-shadow 0.5s;
-  transition: box-shadow 0.5s;
-}
-
-.callme-popup input[type=button]:hover {
-  background-color: #0384d8;
-  color: #ffffff;
-  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
-}
-
-.callme-popup input[type=button]:focus {
-  outline: none;
 }
 
 .close-popup::after {
@@ -271,26 +289,7 @@ header .phonenumbers p:before {
   position: absolute;
   right: 40px;
   top: 10px;
-  background-color: #ffffff;
   padding: 5px 20px;
-  border-radius: 20px;
-  border-color: #0384d8;
-  color: #0384d8;
-  font-size: 15px;
-  font-weight: 700;
-  cursor: pointer;
-  -webkit-transition: box-shadow 0.5s;
-  transition: box-shadow 0.5s;
-}
-
-.navbar button:hover {
-  background-color: #0384d8;
-  color: #ffffff;
-  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
-}
-
-.navbar button:focus {
-  outline: none;
 }
 
 .navbar:after {
@@ -473,26 +472,7 @@ header .phonenumbers p:before {
 .services button {
   display: block;
   margin: 10px auto 50px;
-  background-color: #ffffff;
   padding: 5px 20px;
-  border-radius: 20px;
-  border-color: #0384d8;
-  color: #0384d8;
-  font-size: 15px;
-  font-weight: 700;
-  cursor: pointer;
-  -webkit-transition: box-shadow 0.5s;
-  transition: box-shadow 0.5s;
-}
-
-.services button:hover {
-  background-color: #0384d8;
-  color: #ffffff;
-  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
-}
-
-.services button:focus {
-  outline: none;
 }
 
 .doctors {
@@ -524,26 +504,7 @@ header .phonenumbers p:before {
 .doctors button {
   margin: 20px auto 0;
   display: block;
-  background-color: #ffffff;
   padding: 5px 20px;
-  border-radius: 20px;
-  border-color: #0384d8;
-  color: #0384d8;
-  font-size: 15px;
-  font-weight: 700;
-  cursor: pointer;
-  -webkit-transition: box-shadow 0.5s;
-  transition: box-shadow 0.5s;
-}
-
-.doctors button:hover {
-  background-color: #0384d8;
-  color: #ffffff;
-  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
-}
-
-.doctors button:focus {
-  outline: none;
 }
 
 .prev::after {
@@ -630,24 +591,7 @@ header .phonenumbers p:before {
   right: 10%;
   top: 90px;
   bottom: 0;
-  background-color: #f55130;
   max-height: 50px;
-  border-radius: 20px;
-  border-color: #f55130;
-  color: #ffffff;
-  font-size: 15px;
-  font-weight: 700;
-  cursor: pointer;
-  -webkit-transition: box-shadow 0.5s;
-  transition: box-shadow 0.5s;
-}
-
-.consultation .consultation-wrapper button:hover {
-  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
-}
-
-.consultation .consultation-wrapper button:focus {
-  outline: none;
 }
 
 footer {
@@ -717,26 +661,7 @@ footer .footer-phonenumbers #footer-telephones b::before {
 footer button {
   grid-row: 2;
   grid-column: 4;
-  background-color: #ffffff;
   padding: 5px 20px;
-  border-radius: 20px;
-  border-color: #0384d8;
-  color: #0384d8;
-  font-size: 15px;
-  font-weight: 700;
-  cursor: pointer;
-  -webkit-transition: box-shadow 0.5s;
-  transition: box-shadow 0.5s;
-}
-
-footer button:hover {
-  background-color: #0384d8;
-  color: #ffffff;
-  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
-}
-
-footer button:focus {
-  outline: none;
 }
 
 footer .footer-address {

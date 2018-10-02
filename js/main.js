@@ -3,6 +3,8 @@ $(document).ready(function(){
     let burger = $('#burger');
     let navbar = $('.navbar');
     let callme = $('.callme');
+    
+/** start slick carousel **/
 
     $('.carousel-wrapper').slick({
   dots: true,
@@ -52,6 +54,10 @@ $(document).ready(function(){
   ]
 });
     
+/** end slick carousel **/
+    
+/** start Скрытие/отображение навигационной строки при экране 768px **/
+    
     if($(window).width() < 768){
         navbar.addClass("hide");
     }
@@ -68,7 +74,29 @@ $(document).ready(function(){
         }
         
     });
-        
+    
+/** end Скрытие/отображение навигационной строки при экране 768px **/
+    
+/** start Popup **/
+//создание "класса"
+    function Popup(options){
+    this.modal = document.querySelector(options.modal);
+    this.overlay = document.querySelector(options.overlay);
+    
+    var popup = this;
+    
+    this.open = function(content){
+        popup.modal.innerHTML = content;
+        popup.overlay.classList.add('open');
+        popup.modal.classList.add('open');
+    }
+    this.close = function(){
+        popup.overlay.classList.remove('open');
+        popup.modal.classList.remove('open');
+    }
+    this.overlay.onclick = popup.close;
+}
+//создание объекта    
     let p = new Popup({
         modal: '.modal',
         overlay: '.overlay'
@@ -80,43 +108,49 @@ $(document).ready(function(){
         p.open(form.innerHTML);
     });
     
-    
-    
     // чтобы дотянуться до элементов popup, идем через document
     $(document).on("click", ".close-popup", function(event){
         p.close();
         });
     
     $(document).on("click", ".write-consul", function(event){
-        let form = document.querySelector('.success-popup');
-        p.modal.style.backgroundColor = '#0384d8';
-        p.open(form.innerHTML);
+        let fioPopup = $('#fio-popup');
+        let phonePopup = $('#phone-popup');
+        let messagePopup = document.querySelector('.message-popup');
+        let fioValue = $('#fio-popup').val();
+        let phoneValue = $('#phone-popup').val();
+
+        fioValue = $.trim(fioValue);
+        phoneValue = $.trim(phoneValue);
+        
+        console.log(fioValue);
+        console.log(phoneValue);
+        
+        messagePopup.innerHTML = "";
+        
+        if(fioPopup.val() == ''){
+            messagePopup.innerHTML += "Укажите ФИО! "; 
+        }
+        if(phonePopup.val() == ''){
+            messagePopup.innerHTML += "Укажите телефон! ";
+            phonePopup.attr("placeholder", "+7(___)___-__-__");
+        }
+        if((fioPopup.val() !== '') && (phonePopup.val() !== '')){
+            let form = document.querySelector('.success-popup');
+            p.modal.style.backgroundColor = '#0384d8';
+            p.open(form.innerHTML);
+        }
+        
+
+        
+        
+
         });
-    
-  
 });
+/** end Popup **/
 
-// функции(классы) //
 
-function Popup(options){
-    this.modal = document.querySelector(options.modal);
-    this.overlay = document.querySelector(options.overlay);
-    
-    var popup = this;
-    
-    this.open = function(content){
-        popup.modal.innerHTML = content;
-        popup.overlay.classList.add('open');
-        popup.modal.classList.add('open');
-    }
-    
-    this.close = function(){
-        popup.overlay.classList.remove('open');
-        popup.modal.classList.remove('open');
-    }
-    
-    this.overlay.onclick = popup.close;
-}
+
 
 
 
